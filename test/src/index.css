@@ -1,0 +1,881 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =====================================
+   HOME PAGE
+===================================== */
+
+.home-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #172554,
+            #020617 70%
+        );
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+.landing {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.hero-card {
+    width: min(850px, 95vw);
+
+    padding: 32px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.95),
+            rgba(15, 23, 42, 0.98)
+        );
+
+    border: 1px solid rgba(148, 163, 184, 0.25);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55);
+
+    text-align: center;
+}
+
+
+.badge {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.hero-card h1 {
+    margin-top: 20px;
+
+    font-size: clamp(42px, 7vw, 76px);
+
+    line-height: 0.95;
+
+    font-weight: 900;
+}
+
+
+.hero-card h1 span {
+    display: block;
+
+    color: #facc15;
+
+    text-shadow:
+        0 5px 0 #92400e;
+}
+
+
+.tagline {
+    margin: 18px 0 24px;
+
+    color: #cbd5e1;
+
+    font-size: 16px;
+}
+
+
+.tagline strong {
+    color: #facc15;
+}
+
+
+.scene-wrapper {
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+
+.scene-wrapper img {
+    width: 100%;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+
+.scene-wrapper:hover img {
+    transform: scale(1.025);
+}
+
+
+.start-btn {
+    margin-top: 24px;
+
+    padding: 16px 42px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #facc15,
+            #f97316
+        );
+
+    color: #111827;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 25px rgba(250, 204, 21, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.start-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 0 40px rgba(250, 204, 21, 0.55);
+}
+
+
+.start-btn:active {
+    transform: scale(0.96);
+}
+
+
+.instruction {
+    margin-top: 16px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =====================================
+   GAME PAGE
+===================================== */
+
+.game-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #172554,
+            #020617 75%
+        );
+
+    color: white;
+
+    padding: 28px;
+}
+
+
+.game-container {
+    width: min(1000px, 95vw);
+
+    margin: auto;
+
+    position: relative;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.game-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 22px;
+
+    margin-bottom: 14px;
+
+    border-radius: 18px;
+
+    background: rgba(15, 23, 42, 0.9);
+
+    border: 1px solid rgba(148, 163, 184, 0.2);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+
+.game-title {
+    font-size: 22px;
+
+    font-weight: 900;
+
+    color: #facc15;
+}
+
+
+.hud {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.hud-item {
+    min-width: 75px;
+
+    padding: 8px 12px;
+
+    border-radius: 10px;
+
+    background: #1e293b;
+
+    text-align: center;
+}
+
+
+.hud-item small {
+    display: block;
+
+    font-size: 8px;
+
+    color: #94a3b8;
+
+    font-weight: bold;
+}
+
+
+.hud-item strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 17px;
+}
+
+
+#timer.danger {
+    color: #ef4444;
+
+    animation: timerPulse 0.7s infinite alternate;
+}
+
+
+@keyframes timerPulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =====================================
+   GAME BOARD
+===================================== */
+
+#game-board {
+
+    height: min(650px, 70vh);
+
+    min-height: 480px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    border: 2px solid #334155;
+
+    cursor: crosshair;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 30%,
+            #172554 0%,
+            #0f172a 45%,
+            #020617 100%
+        );
+
+    box-shadow:
+        inset 0 0 80px rgba(0, 0, 0, 0.55),
+        0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+
+/* Decorative arena lines */
+
+#game-board::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 95%,
+            rgba(250, 204, 21, 0.08) 95%
+        );
+
+    background-size: 100% 80px;
+
+    pointer-events: none;
+}
+
+
+.arena-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(30, 64, 175, 0.12);
+
+    filter: blur(50px);
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   FALLING COCONUT
+===================================== */
+
+#coconuts {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+
+.falling-coconut {
+    position: absolute;
+
+    z-index: 5;
+
+    user-select: none;
+
+    cursor: crosshair;
+
+    filter:
+        drop-shadow(
+            0 8px 8px rgba(0, 0, 0, 0.4)
+        );
+
+    transition:
+        filter 0.1s ease,
+        transform 0.1s ease;
+
+    -webkit-user-drag: none;
+}
+
+
+.falling-coconut:hover {
+    filter:
+        drop-shadow(
+            0 0 15px rgba(250, 204, 21, 0.8)
+        );
+}
+
+
+.coconut-hit {
+    animation: coconutHit 0.18s ease forwards;
+}
+
+
+@keyframes coconutHit {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+
+}
+
+
+/* =====================================
+   CROSSHAIR
+===================================== */
+
+#crosshair {
+    position: absolute;
+
+    z-index: 20;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 28px;
+
+    color: #facc15;
+
+    text-shadow:
+        0 0 12px rgba(250, 204, 21, 0.8);
+
+    pointer-events: none;
+
+    opacity: 0.8;
+}
+
+
+/* =====================================
+   GET READY
+===================================== */
+
+#game-message {
+    position: absolute;
+
+    z-index: 30;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    pointer-events: none;
+
+    background: rgba(2, 6, 23, 0.2);
+
+    transition: opacity 0.3s;
+}
+
+
+#game-message span {
+    font-size: clamp(38px, 6vw, 70px);
+
+    font-weight: 900;
+
+    color: #facc15;
+
+    text-shadow:
+        0 5px 0 #92400e;
+}
+
+
+#game-message small {
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    color: #cbd5e1;
+
+    letter-spacing: 2px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =====================================
+   HIT SCORE
+===================================== */
+
+.score-popup {
+    position: absolute;
+
+    z-index: 50;
+
+    color: #facc15;
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    animation: scoreFloat 0.7s ease forwards;
+
+    text-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+@keyframes scoreFloat {
+
+    0% {
+        opacity: 1;
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -120px)
+            scale(1.3);
+    }
+
+}
+
+
+/* =====================================
+   PARTICLES
+===================================== */
+
+.particle {
+    position: absolute;
+
+    z-index: 40;
+
+    pointer-events: none;
+
+    font-size: 18px;
+
+    animation: particleFly 0.6s ease-out forwards;
+}
+
+
+@keyframes particleFly {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(0.4);
+    }
+
+}
+
+
+/* =====================================
+   SHOOT EFFECT
+===================================== */
+
+#game-board.shooting {
+    border-color: #facc15;
+
+    box-shadow:
+        inset 0 0 60px rgba(250, 204, 21, 0.08),
+        0 0 30px rgba(250, 204, 21, 0.2);
+}
+
+
+#game-board.missed {
+    animation: boardShake 0.15s;
+}
+
+
+@keyframes boardShake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-6px);
+    }
+
+    75% {
+        transform: translateX(6px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =====================================
+   BOTTOM BAR
+===================================== */
+
+.game-bottom {
+    margin-top: 12px;
+
+    padding: 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-radius: 16px;
+
+    background: rgba(15, 23, 42, 0.9);
+
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+
+.game-btn {
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    border: 1px solid #475569;
+
+    background: #1e293b;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.game-btn:hover {
+    background: #334155;
+
+    transform: translateY(-2px);
+}
+
+
+#game-status {
+    color: #facc15;
+
+    font-weight: 900;
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   GAME OVER
+===================================== */
+
+.overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        rgba(2, 6, 23, 0.78);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.game-over-card {
+    width: min(400px, 90vw);
+
+    padding: 38px;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1e293b,
+            #0f172a
+        );
+
+    border: 1px solid #475569;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.7);
+}
+
+
+.over-icon {
+    font-size: 48px;
+}
+
+
+.game-over-card h2 {
+    margin-top: 8px;
+
+    color: #facc15;
+
+    font-size: 42px;
+}
+
+
+.game-over-card p {
+    margin-top: 15px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+#final-score {
+    display: block;
+
+    margin: 5px 0 25px;
+
+    font-size: 52px;
+}
+
+
+.over-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+.over-buttons button {
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+#playAgainBtn {
+    background: #facc15;
+
+    color: #111827;
+}
+
+
+#overHomeBtn {
+    background: #334155;
+
+    color: white;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .home-page,
+    .game-page {
+        padding: 12px;
+    }
+
+    .hero-card {
+        padding: 20px;
+    }
+
+    .game-header {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .hud {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    #game-board {
+        height: 70vh;
+
+        min-height: 420px;
+    }
+
+    .game-bottom {
+        gap: 10px;
+    }
+
+    #game-status {
+        font-size: 11px;
+    }
+
+}

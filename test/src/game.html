@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coconut Chaos - Game</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="game-page">
+
+    <main class="game-container">
+
+        <!-- HUD -->
+        <header class="game-header">
+
+            <div class="game-title">
+                🥥 COCONUT CHAOS
+            </div>
+
+            <div class="hud">
+
+                <div class="hud-item">
+                    <small>SCORE</small>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div class="hud-item">
+                    <small>TIME</small>
+                    <strong id="timer">30</strong>
+                </div>
+
+                <div class="hud-item lives-box">
+                    <small>LIVES</small>
+                    <strong id="lives">❤️ ❤️ ❤️</strong>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- GAME ARENA -->
+
+        <section id="game-board">
+
+            <div class="arena-top">
+                <span>🥥 INCOMING!</span>
+                <span id="combo">COMBO ×1</span>
+            </div>
+
+            <!-- Coconuts will appear here -->
+
+            <div id="game-message">
+                <span>GET READY!</span>
+                <small>Click the coconuts before they escape!</small>
+            </div>
+
+            <!-- Crosshair -->
+            <div id="crosshair"></div>
+
+            <!-- Hit effects -->
+            <div id="hit-effect"></div>
+
+        </section>
+
+
+        <!-- CONTROLS -->
+
+        <div class="game-bottom">
+
+            <button onclick="restartGame()" class="game-btn">
+                🔄 RESTART
+            </button>
+
+            <div id="game-status">
+                🎯 SHOOT THE COCONUTS!
+            </div>
+
+            <button onclick="goHome()" class="game-btn">
+                🏠 HOME
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="game.js"></script>
+
+</body>
+
+</html>

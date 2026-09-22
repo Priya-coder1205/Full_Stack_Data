@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Face Example</title>
+    <style>
+        /*pseudo classes user intreraction hover focus */
+        @font-face {
+            font-family: 'guazhiru-font';
+            src: url("C:\\Users\\Atul Singh pkt\\Downloads\\guazhiru-font\\GuazhiruRegularOutlined-Dzr0.ttf") format('truetype');
+            
+        }
+        body{
+            background-image:url('marine.jpg');
+        }
+        *{
+            margin: 0;
+            padding: 0;
+           
+            
+        }
+        button{
+            color:white;
+            background-color:black;
+            border-width:2px;
+            font-size:30px;
+        }
+        button.hover{
+            box-shadow:3px 3px 5px yellow;
+        }
+        button.active{
+            box-shadow: 0px 0px 0px;
+            background-color:yellow;
+        }
+        section h2{
+            color:blue;
+            text-shadow:0 0 3px blue;
+        }
+        section>h2{
+            color:aqua;
+        }
+        h2 + p{
+            font-size:30px;
+        }
+        h2 - p{
+            color:green;
+        }
+        h1 {
+            font-family: 'guazhiru-font';
+            font-size: 100px;
+        }
+        h1,li{
+            font-size:45px;
+            
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #myid{
+           
+        }
+        button.focus{
+
+        }
+        input[type="checked"]{
+            color:blue;
+            height:50px;
+            width:50px;
+            text-align:right;
+        }
+        input.checked{
+            box-shadow: 3px 3px 5px grey;
+            acent color:red;
+        }
+        li[data ="null"]{
+            color:red;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+            color:white;
+            font-size:30px;
+        }
+        a{
+            font-size:40px;
+
+        }
+        a.link{
+            color:red;
+        }
+        a.visited{
+            color:yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <br>
+    <h1>Selectors</h1>
+    <input type="checkbox/">
+    <br>
+    <ul>
+        <li id="myid">Element Selector</li>
+        <li>Id Selector</li>
+        <li class="myclass">Class Selector</li>
+        <li>Pseudo class Selector</li>
+        <li>Attribute Selector</li>
+        <li>Pseudo element Selector</li>
+        <li>Combinators</li>
+        <li>Universal Selector</li>
+    </ul>
+    <button>Click Me!!</button>
+    <br><br>
+    <input type="text" placeholder="Enter your name"><br><br>
+    <input type="text" placeholder="Enter your email"><br><br>
+
+    <a href="#" target="blank">Link</a>
+</body>
+</html>

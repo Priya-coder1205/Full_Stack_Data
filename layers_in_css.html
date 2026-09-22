@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #para {
+            color: red;
+        }
+        p{
+            color: blue;
+            font-size: 20px;
+        /* } */
+         /*@layer base ,specail,morespecial;
+         @layer base {
+            .para{
+                color: blue;
+                font-size: 30px;
+            }
+            @layer special {
+                .highlight-para{
+                    color: red;
+                    font-size: 40px;
+                }
+            }
+            @layer morespecial {
+                .highlight-para{
+                    color: green;
+                    font-size: 50px;
+                }
+            }
+        } */
+
+        body{
+            background-color: black;
+            color: white;
+            font -size: 45px;
+            container-type: inline-size;
+            
+        }
+        p{
+           
+            font-size: 45px;
+        }
+        /* @media(min-width:800px){
+            p{
+                color: blue;
+                font-size: 30px;
+                background-color: red;
+            }
+        } */
+        /*
+        @media(max-width:800px){
+            p{
+                color: red;
+                font-size: 35px;
+                background-color: blue;
+            }
+        } */
+        /* @media(min-width:800px) and (max-width:1200px){
+            p{
+                color: blue;
+                font-size: 30px;
+                background-color: red;
+            }
+        } */
+        /* @media(min-width:800px) , (max-width:400px){
+            p{
+                color: blue;
+                font-size: 30px;
+                background-color: red;
+            }
+        } */
+         /* .parent{
+            font-size: 20px;
+         }
+         .parent{
+            container-type: inline-size;
+            container-name: parent;
+         }
+         @container parent (min-width: 800px){
+            .child{
+                color: blue;
+                font-size: 30px;
+                background-color: red;
+            }
+            
+        } */
+         @container (width>800px){
+            p{
+                color: blue;
+                font-size: 30px;
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="parent">
+        <div class="child">
+            <p class="para">KIMADA!!</p>
+        </div> -->
+
+    <p>KIMADA!!</p>
+    
+</body>
+</html>

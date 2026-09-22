@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('gun_bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: inset 0 0 10px #000000;
+            text-shadow: 0 0 5px #e93838;
+            font-size: 40px;
+            color: white;
+            Font-family: 'Times New Roman', Times, serif;
+
+        }
+
+   
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+
+
+        .rifles {
+            width: 250px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(18, 8, 8, 0.1);
+        }
+
+        .rifles img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(137, 33, 33, 0.1);
+        }
+
+        .rifles h2 {
+            margin: 15px 0 10px;
+            font-size: 20px;
+        }
+
+        .rifles h3 {
+            margin-bottom: 15px;
+        }
+
+        .rifles p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .rifles h3 {
+            margin-bottom: 15px;
+        }
+
+        .rifles button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .rifles:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Firearms</h1>
+
+    <div class="product-container">
+
+        <div class="rifles">
+            <img src="47ak.jpg" alt="Ak47">
+            <h2>Ak47</h2>
+            <p>The Ultimate Endorsement</p>
+            <h3>₹100</h3>
+            <button>Fire</button>
+        </div>
+
+        <div class="rifles">
+            <img src="M4A1.jpg" alt="Smart Watch">
+            <h2>M4A1 Carbine</h2>
+            <p>The Safe-Semi-Burst</p>
+            <h3>₹15</h3>
+            <button>Fire</button>
+        </div>
+
+        <div class="rifles">
+            <img src="M4.jpg" alt="Bluetooth Speaker">
+            <h2>M4 Carbine</h2>
+            <p>The Operator Choice</p>
+            <h3>₹9</h3>
+            <button>Fire</button>
+        </div>
+
+        <div class="rifles">
+            <img src="Ak12.jpg" alt="Gaming Mouse">
+            <h2>Ak 12</h2>
+            <p>The Strategic Philosophy</p>
+            <h3>₹79</h3>
+            <button>Fire</button>
+        </div>
+
+        <div class="rifles">
+            <img src="magnum.jpg" alt="Wireless Earbuds">
+            <h2>M16</h2>
+            <p>The Classic Choice</p>
+            <h3>₹50</h3>
+            <button>Fire</button>
+        </div>
+
+        <div class="rifles">
+            <img src="eagle.jpg" alt="Smartphone">
+            <h2>Desert Eagle</h2>
+            <p>The Legendary Power</p>
+            <h3>₹100</h3>
+            <button>Fire</button>
+        </div>
+
+        <div class="rifles">
+            <img src="glock.jpg" alt="Laptop">
+            <h2>Glock 17</h2>
+            <p>The Reliable Choice</p>
+            <h3>₹30</h3>
+            <button>Fire</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

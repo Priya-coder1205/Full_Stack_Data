@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .container {
+                display: flex;
+                height: 90vh;
+                outline: 3px solid rgb(219, 74, 74);
+                flex-direction: row;
+                /*justify-content: center;
+                align-items: center;
+                justify -content: space-between;
+                justify-content: space-around;
+                justify-content: space-evenly;
+                background-image: url('holi.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;*/
+                flex-wrap: wrap;
+                align-content: center;
+                align-items: center;
+                
+            }
+            .container>div{
+                background-color: lightblue;
+                color: black;
+                height: 100px;
+                width: 100px;
+                align-content: center;
+                text-align: center;
+                font-size: 20px;
+            }
+            #box1 {
+                flex-basis: 150px;
+                background-color: lightcoral;
+                flex-grow: 0;
+                flex-shrink: 0;
+                /*flex-grow: 1; flex-shrink: 1; flex-basis: 150px;  flex: 2 1 150px;*/
+            }
+            #box2 {
+                flex-basis: 150px;
+                background-color: lightgreen;
+                flex-grow: 0;
+                flex-shrink: 0;
+            
+
+            }
+            #box3 {
+                flex-basis: 150px;
+                background-color: rgb(251, 251, 130);
+                flex-grow: 0;
+                flex-shrink:  0;
+            }
+            #box4 {
+                flex-basis: 150px;
+                background-color: lightpink;
+                flex-grow: 0;
+                flex-shrink: 0;
+            }
+            #box5 {
+                flex-basis: 150px;
+                background-color: lightblue;
+                flex-grow: 0;
+                flex-shrink: 0;
+            }
+            #box6 {
+                flex-basis: 150px;
+                background-color: lightgray;
+                flex-grow: 0;
+                flex-shrink: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="box1">Red</div>
+            <div id="box2">Green</div>
+            <div id="box3">yellow</div>
+            <div id="box4">Pink</div>
+            <div id="box5">Blue</div>
+            <div id="box6">Gray</div>
+        </div>
+    </body>
+</html>
